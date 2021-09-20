@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class UserManageIndexTest extends BaseTest {
+public class UserManageIndexPageTest extends BaseTest {
     private LoginPage login;
     private UserManageHomePage userManage;
 

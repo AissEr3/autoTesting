@@ -2,14 +2,8 @@ package pages.admin.usermanage.base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public abstract class SelectPage{
-    protected WebDriver driver;
-
-    protected WebElement confirmButton;
-    protected WebElement cancelButton;
-
+public abstract class SelectPage extends BasePage{
     public SelectPage(WebDriver fatherPageDriver){
         driver = fatherPageDriver;
         driver.switchTo().defaultContent();

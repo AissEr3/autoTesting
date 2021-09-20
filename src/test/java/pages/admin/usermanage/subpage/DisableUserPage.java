@@ -4,19 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import pages.admin.usermanage.base.BasePage;
+import pages.admin.usermanage.base.MessagePage;
 
-public class DisableUserPage extends BasePage {
-    @FindBy(xpath = "/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div")
-    private WebElement hintInformation;
-
+public class DisableUserPage extends MessagePage {
     public DisableUserPage(WebDriver fatherPageDriver){
-        driver = fatherPageDriver;
-        driver.switchTo().defaultContent();
-        PageFactory.initElements(driver,this);
-    }
-
-    public WebElement getHintInformation() {
-        return hintInformation;
+        super(fatherPageDriver);
     }
 }
