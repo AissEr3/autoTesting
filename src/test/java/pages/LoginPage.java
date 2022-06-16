@@ -49,8 +49,4 @@ public class LoginPage {
     public String getUserName(){
         return driver.findElement(By.xpath("//*[@id=\"side-menu\"]/li[1]/div[1]/a/span/span[1]/strong")).getText();
     }
-
-    public String getPersonnelCategory(){
-        return driver.findElement(By.xpath("//*[@id=\"side-menu\"]/li[1]/div[1]/a/span/span[2]")).getText();
-    }
 }
