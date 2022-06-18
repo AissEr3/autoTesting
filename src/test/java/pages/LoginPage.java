@@ -11,16 +11,16 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
     private WebDriver driver;
 
-    @FindBy(name = "userName")
     @CacheLookup
+    @FindBy(name = "userName")
     private WebElement username;
 
-    @FindBy(name = "password")
     @CacheLookup
+    @FindBy(name = "password")
     private WebElement password;
 
-    @FindBy(id = "but_login")
     @CacheLookup
+    @FindBy(id = "but_login")
     private WebElement loginButton;
 
     public LoginPage() throws IllegalStateException{

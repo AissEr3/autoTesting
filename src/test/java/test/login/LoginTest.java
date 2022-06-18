@@ -69,4 +69,5 @@ public class LoginTest extends BaseTest {
             fail("login error not found error message");
         }
     }
+
 }
