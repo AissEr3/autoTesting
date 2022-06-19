@@ -18,4 +18,5 @@ public class MessagePage extends BasePage{
     public WebElement getHintInformation() {
         return hintInformation;
     }
+    
 }
