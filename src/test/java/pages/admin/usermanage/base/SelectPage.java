@@ -13,13 +13,14 @@ public abstract class SelectPage extends BasePage{
 
     public void clickConfirmButton(){
         driver.switchTo().defaultContent();
-        confirmButton = driver.findElements(By.xpath("//input[@value=\"确定\"]")).get(0);
+        confirmButton = driver.findElements(By.xpath("//input[@value=\"脠路露篓\"]")).get(0);
         confirmButton.click();
     }
 
     public void clickCancelButton(){
         driver.switchTo().defaultContent();
-        cancelButton = driver.findElement(By.xpath("//input[@value=\"取消\"]"));
+        cancelButton = driver.findElement(By.xpath("//input[@value=\"脠隆脧没\"]"));
         cancelButton.click();
     }
+    
 }
