@@ -1,6 +1,7 @@
 package pages;
 
 import base.BaseTest;
+import org.apache.commons.logging.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,5 +49,9 @@ public class LoginPage {
 
     public String getUserName(){
         return driver.findElement(By.xpath("//*[@id=\"side-menu\"]/li[1]/div[1]/a/span/span[1]/strong")).getText();
+    }
+
+    public static LoginPage getInstance(){
+        return new LoginPage();
     }
 }

@@ -1,17 +1,15 @@
-package pages.admin.usermanage.subPage;
+package pages.admin.usermanage.subpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.admin.usermanage.base.SelectPage;
 
 import java.util.List;
 
-public class SelectRolePage {
-    private WebDriver driver;
-
+public class SelectRolePage extends SelectPage {
     private static final String[] CHECK_NAME = {"填报人员","审核人员","系统管理员","管理人员"};
     @FindBy(xpath = "//input[@name=\"ck\"]")
     private List<WebElement> checker;
@@ -19,13 +17,8 @@ public class SelectRolePage {
     @FindBy(xpath = "/html/body/div/div[2]/div[2]/div[1]/div[1]/div/table/tbody/tr/td[2]/div/input")
     private WebElement checkAll;
 
-
-    private WebElement confirmButton;
-    private WebElement cancelButton;
-
     public SelectRolePage(WebDriver fatherPageDriver){
-        driver = fatherPageDriver;
-        driver.switchTo().defaultContent();
+        super(fatherPageDriver);
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
@@ -36,12 +29,12 @@ public class SelectRolePage {
         PageFactory.initElements(driver,this);
     }
 
-    public SelectRolePage checkAll(){
+    public SelectRolePage selectAll(){
         checkAll.click();
         return this;
     }
 
-    public SelectRolePage check(String ... selector){
+    public SelectRolePage select(String ... selector){
         for(String select : selector){
             for(int i = 0; i < CHECK_NAME.length; i++){
                 if(select.equals(CHECK_NAME[i])){
@@ -53,15 +46,4 @@ public class SelectRolePage {
         return this;
     }
 
-    public void clickConfirmButton(){
-        driver.switchTo().defaultContent();
-        confirmButton = driver.findElements(By.xpath("//input[@value=\"确定\"]")).get(0);
-        confirmButton.click();
-    }
-
-    public void clickCancelButton(){
-        driver.switchTo().defaultContent();
-        cancelButton = driver.findElement(By.xpath("//input[@value=\"取消\"]"));
-        cancelButton.click();
-    }
 }

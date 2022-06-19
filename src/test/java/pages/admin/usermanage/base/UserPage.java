@@ -1,16 +1,16 @@
-package pages.admin.usermanage.subPage;
+package pages.admin.usermanage.base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import pages.admin.usermanage.subpage.SelectOrganizationPage;
+import pages.admin.usermanage.subpage.SelectRolePage;
 
 import java.util.List;
 
-public abstract class UserPage {
-    protected WebDriver driver;
-
+public abstract class UserPage extends BasePage{
     @CacheLookup
     @FindBy(xpath = "//*[@id=\"formobj\"]/table/tbody//input")
     protected List<WebElement> inputList;
@@ -31,8 +31,7 @@ public abstract class UserPage {
     protected WebElement officePhone;
     protected WebElement email;
 
-    protected WebElement confirmButton;
-    protected WebElement cancelButton;
+    protected abstract void initWebElement();
 
     public UserPage(WebDriver fatherPageDriver){
         driver = fatherPageDriver;
@@ -45,21 +44,14 @@ public abstract class UserPage {
         driver.switchTo().frame(frame);
     }
 
-    abstract void initWebElement();
-
-    public SelectOrganizationPage selectOrganizationOf(String ... selector){
+    public SelectOrganizationPage clickSelectOrgButton(){
         selectOrgButton.click();
-        return new SelectOrganizationPage(driver).selectOrganization(selector);
+        return new SelectOrganizationPage(driver);
     }
 
-    public SelectRolePage checkAllRole(){
+    public SelectRolePage clickCheckRoleButton(){
         selectRoleButton.click();
-        return new SelectRolePage(driver).checkAll();
-    }
-
-    public SelectRolePage checkRoleOf(String ... checker){
-        selectRoleButton.click();
-        return new SelectRolePage(driver).check(checker);
+        return new SelectRolePage(driver);
     }
 
     public UserPage setRealName(String realName) {
@@ -82,15 +74,19 @@ public abstract class UserPage {
         return this;
     }
 
-    public void clickConfirmButton(){
-        driver.switchTo().defaultContent();
-        confirmButton = driver.findElement(By.xpath("//input[@value=\"È·¶¨\"]"));
-        confirmButton.click();
+    public WebElement getRealName() {
+        return realName;
     }
 
-    public void clickCancelButton(){
-        driver.switchTo().defaultContent();
-        cancelButton = driver.findElement(By.xpath("//input[@value=\"¹Ø±Õ\"]"));
-        cancelButton.click();
+    public WebElement getCellPhone() {
+        return cellPhone;
+    }
+
+    public WebElement getOfficePhone() {
+        return officePhone;
+    }
+
+    public WebElement getEmail() {
+        return email;
     }
 }

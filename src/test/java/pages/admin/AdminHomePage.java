@@ -40,4 +40,8 @@ public class AdminHomePage {
     public void openInstitutionalFramework(){
         institutionalFramework.click();
     }
+
+    public static AdminHomePage getInstance(){
+        return new AdminHomePage();
+    }
 }

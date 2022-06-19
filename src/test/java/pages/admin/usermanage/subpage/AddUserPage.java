@@ -1,11 +1,12 @@
-package pages.admin.usermanage.subPage;
+package pages.admin.usermanage.subpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import pages.admin.usermanage.base.UserPage;
 
 
-public class AddUserPage extends UserPage{
+public class AddUserPage extends UserPage {
     private WebElement username;
     private WebElement password;
     private WebElement rePassword;
@@ -40,5 +41,17 @@ public class AddUserPage extends UserPage{
     public AddUserPage setRePassword(String rePassword){
         this.rePassword.sendKeys(rePassword);
         return this;
+    }
+
+    public WebElement getUsername() {
+        return username;
+    }
+
+    public WebElement getPassword() {
+        return password;
+    }
+
+    public WebElement getRePassword() {
+        return rePassword;
     }
 }
