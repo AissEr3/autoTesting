@@ -36,7 +36,7 @@ public class UserManageIndexPageTest extends BaseTest {
         public void openUserManageTest(){
             userManage = new AdminHomePage().openUserManager();
             try{
-                driverWait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div[1]/div[1]"),"用户管理"));
+                driverWait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div[1]/div[1]"),"鐢ㄦ埛绠＄悊"));
             }catch(TimeoutException e){
                 fail("doesn't open");
             }
@@ -56,7 +56,7 @@ public class UserManageIndexPageTest extends BaseTest {
                 addUser = userManage.clickAddUserButton();
                 driver.switchTo().defaultContent();
                 try{
-                    driverWait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[1]/td/div/div[1]"),"用户录入"));
+                    driverWait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[1]/td/div/div[1]"),"鐢ㄦ埛褰曞叆"));
                 }catch(TimeoutException e){
                     fail("doesn't open");
                 }
@@ -69,7 +69,7 @@ public class UserManageIndexPageTest extends BaseTest {
                 editUser = userManage.clickEditUserButton();
                 driver.switchTo().defaultContent();
                 try{
-                    driverWait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[1]/td/div/div[1]"),"用户编辑"));
+                    driverWait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[1]/td/div/div[1]"),"鐢ㄦ埛缂栬緫"));
                 }catch(TimeoutException e){
                     fail("doesn't open");
                 }
@@ -79,4 +79,5 @@ public class UserManageIndexPageTest extends BaseTest {
             }
         }
     }
+    
 }
