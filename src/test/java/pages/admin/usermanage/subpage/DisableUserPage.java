@@ -7,7 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import pages.admin.usermanage.base.MessagePage;
 
 public class DisableUserPage extends MessagePage {
+    
     public DisableUserPage(WebDriver fatherPageDriver){
         super(fatherPageDriver);
     }
+    
 }
