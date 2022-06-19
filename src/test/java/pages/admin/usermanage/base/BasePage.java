@@ -13,13 +13,14 @@ public class BasePage {
 
     public void clickConfirmButton(){
         driver.switchTo().defaultContent();
-        confirmButton = driver.findElement(By.xpath("//input[@value=\"确定\"]"));
+        confirmButton = driver.findElement(By.xpath("//input[@value=\"脠路露篓\"]"));
         confirmButton.click();
     }
 
     public void clickCancelButton(){
         driver.switchTo().defaultContent();
-        cancelButton = driver.findElement(By.xpath("//input[@value=\"关闭\"]"));
+        cancelButton = driver.findElement(By.xpath("//input[@value=\"鹿脴卤脮\"]"));
         cancelButton.click();
     }
+    
 }
